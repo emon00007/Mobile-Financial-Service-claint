@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,7 +26,20 @@ const Signup = () => {
             return;
         }
         console.log(email, name, number, password)
+        const userInfo ={
+            email,name, number, password
+        }
+        axios.post('http://localhost:5000/userAdded', userInfo)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        
     }
+
+
     return (
         <div>
             <div className="hero bg-base-200  ">
