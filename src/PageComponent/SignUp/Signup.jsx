@@ -1,10 +1,12 @@
-import axios from "axios";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Signup = () => {
     const [registerError, setRegisterError] = useState("");
-    const handelRegister = e => {
+    const {createUser,setUser}=useAuth()
+    const handelRegister  = async(e) => {
 
         e.preventDefault()
         console.log(e.currentTarget)
@@ -25,17 +27,22 @@ const Signup = () => {
             setRegisterError("it's not a number");
             return;
         }
+
         console.log(email, name, number, password)
         const userInfo ={
             email,name, number, password
         }
-        axios.post('http://localhost:5000/userAdded', userInfo)
-            .then(res => {
-                console.log(res.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        const result = await createUser(userInfo)
+        if(result){
+            setUser(userInfo)
+        }
+        // axios.post('http://localhost:5000/userAdded', userInfo)
+        //     .then(res => {
+        //         console.log(res.data);
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
         
     }
 
