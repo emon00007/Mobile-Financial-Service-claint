@@ -1,12 +1,12 @@
-import balance from '../../../public/191-1913783_account-balance-transparent-payment-icon-png-png-download.png'
-import sendmoney from '../../../public/4121776.png'
-import cashout from '../../../public/6466947.png'
-import cashIn from '../../../public/1224428.png'
-import History from '../../../public/images (3).jpeg'
+// import balance from '../../../public/191-1913783_account-balance-transparent-payment-icon-png-png-download.png'
+// import sendmoney from '../../../public/4121776.png'
+// import cashout from '../../../public/6466947.png'
+// import cashIn from '../../../public/1224428.png'
+// import History from '../../../public/images (3).jpeg'
 const Home = () => {
     return (
         <div>
-            <div className="hero bg-base-200">
+            {/* <div className="hero bg-base-200">
                 <div className="card bg-base-100 lg:w-2/4 md:w-3/4 shadow-2xl p-4 lg:my-6 md:my-2">
                     <div className='card-body'>
                         <div className='grid grid-cols-2 mx-auto gap-8'>
@@ -36,7 +36,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            {/* {moderator?<></>:<></>
+
+            } */}
         </div>
     );
 };
